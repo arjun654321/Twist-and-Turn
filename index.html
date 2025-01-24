@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" style="background: #494545;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twist & Connect</title>
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1 class="game-title">Twist & Connect</h1>
+
+  <div id="level-display" style="position: absolute; top: 10px; right: 10px; color: white;font-size: 25px;">
+    Level: <span id="current-level">1</span> / <span id="total-levels">16</span>
+  </div>
+
+  <div class="lvl1" data-code="1231243" data-set="e1.b.c2.c3.c1.s2.c4.e2" data-text="<br><span>Click on block to rotate and complete the pipe.</span>"></div>
+  <div class="lvl2" data-code="2323114311231414" data-set="c1.c2.c4.c1.s2.c3.c1.e1.s1.e2.c1.c3.c4.c1.c2.c3"></div>
+  <div class="lvl3" data-code="42232324114122322243" data-set="e2.s1.s2.c2.c2.c1.c1.c1.s2.c2.c2.b.c2.s2.s2.c1.c1.s1.s1.c1.e2.b.b.b"></div>
+  <div class="lvl4" data-code="2222423124111111414" data-set="b.c1.s1.e1.c1.c1.c1.c2.s2.c2.c2.s2.s2.s1.e2.s1.c2.c1.c2.c2"></div>
+  <div class="lvl5" data-code="222314311113443" data-set="c2.s1.s2.c1.s2.e1.c1.s1.s1.b.s2.s2.e1.e1.c1.e1" data-text="Multiple pipes."></div>
+  <div class="lvl6" data-code="112413123111111414" data-set="b.e1.e2.b.c2.c1.c1.c1.s1.c1.c1.s2.s1.s2.s2.s1.c2.c1.c1.c2"></div>
+  <div class="lvl7" data-code="2323141423231414" data-set="c4.c1.c3.c1.c2.c3.c4.c1.c2.c1.c3.c2.c1.c1.c2.c1" data-text="Circles."></div>
+  <div class="lvl8" data-code="222312242211314311143" data-set="c4.s1.s1.c1.c2.s2.s2.c1.b.c2.e3.e4.b.c2.c1.s2.e3.c2.s2.s1.b.c1.c2.e1"></div>
+  <div class="lvl9" data-code="222244312241123132414" data-set="b.c1.s1.e2.c2.c2.e1.c2.s1.c2.s2.c1.s1.c1.s1.c2.c1.c2.c2.c2.b.c2.c1.b"></div>
+  <div class="lvl10" data-code="122311241413422423311231223" data-set="e1.c2.s1.c4.s1.s2.c1.c3.c1.c3.c2.c4.e2.e4.c3.c2.c4.c2.e4.b.s1.c3.s2.c4.c1.s1.e2.e3"></div>
+  <div class="lvl11" data-code="432224131431121122331222" data-set="e1.c2.c1.e1.c1.c1.c1.c1.s1.e1.c2.s1.c1.e2.s2.s2.c1.e1.e1.e1.c2.s1.s2.e1"></div>
+  <div class="lvl12" data-code="42232224122311113441222" data-set="e2.s1.s2.c1.c2.s2.s1.c2.s2.c1.s2.c2.s1.s2.b.s2.s2.e2.e2.c1.c1.s2.s2.e1"></div>
+  <div class="lvl13" data-code="2221223144422231241424" data-set="c1.s1.e1.b.s2.c1.s2.c1.c1.c1.e2.c2.c1.e2.c1.c2.c2.s2.c2.s2.b.e1.s2.c1"></div>
+  <div class="lvl14" data-code="1231141442314314442333" data-set="e1.c2.c1.e2.c1.c2.c2.c2.e1.s2.c2.e1.e1.c1.c2.c1.e1.c2.c2.c2.b.b.e1.e2"></div>
+  <div class="lvl15" data-code="1223113112434323111111411224" data-set="e1.c2.s1.c2.s2.c1.c1.s2.c2.s2.c1.e1.e1.c1.c2.c1.e1.s1.s2.s2.s1.c1.c1.s2.c1.s2.s2.c1"></div>
+  <div class="lvl16" data-code="422122243123241112414224" data-set="e2.s1.e2.e1.c1.s1.s1.c2.e2.e2.c2.c1.c1.c2.s1.s2.c1.s1.c1.s2.e1.s1.s2.c1"></div>
+
+  <div id="level-complete"><div class="msg">Level <span>1</span> Complete</div></div>
+  <div id="game-finished"><div class="msg">Game Completed!</div></div>
+
+  <div id="level-creation">
+    <div class="new-level"></div>
+    <div class="level-stats"></div>
+    <div class="toolbox">
+      <img src="https://db.tt/k4C8HDzW" alt="" class="curve" />
+      <img src="https://db.tt/q7awJWNW" alt="" class="straight" />
+      <img src="https://db.tt/gBByua2j" alt="" class="end" />
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" class="blank" />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
